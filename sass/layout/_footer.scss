@@ -1,0 +1,57 @@
+@import "../base/base";
+@import "../utils/utils";
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    padding: 22px 25px;
+    background-color: #353535;
+    
+        h1 {
+            color: white;
+            font-size: 18px;
+        }
+        
+        &__list {
+            margin-top: 16px;
+            ul {
+                list-style-type: none;
+
+                li:not(:last-child) {
+                    margin-bottom: 10px;
+                }
+            
+                a {
+                    color: white;
+                    text-decoration: none;
+
+                    .fa-utensils, .fa-handshake-angle {
+                        margin-right: 11px;
+                    }
+                    .fa-handshake-angle {
+                        width: 14px;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 1100px) {
+            padding: 57px 50px 30px;
+            align-items: center;
+            flex-direction: row-reverse;
+            gap: 50px;
+
+            &__list {
+                margin-top: 0;
+            ul {
+                display: flex;
+                flex-direction: row;
+                gap: 50px;
+
+                li:not(:last-child) {
+                    margin-bottom: 0;
+                }
+        }
+    }
+}
+}

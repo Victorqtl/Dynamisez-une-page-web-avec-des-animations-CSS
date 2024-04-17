@@ -1,0 +1,29 @@
+@import "../base/base";
+@import "../utils/utils";
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+        &__img {
+            z-index: 1;
+            align-self: stretch;
+            text-align: center;
+            padding: 14px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+        }
+
+        &__subtitle {
+            align-self: stretch;
+            text-align: center;
+            padding: 15px 0;
+            color: #353535;
+            background-color: #EAEAEA;
+            box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+            span {
+                margin-right: 17px;
+            }
+        }
+}

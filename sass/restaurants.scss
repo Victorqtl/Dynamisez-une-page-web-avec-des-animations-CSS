@@ -1,0 +1,14 @@
+@import "./base/base";
+@import "./components/components";
+@import "./layout/layout";
+@import "./utils/utils";
+
+.header__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+        
+    }
+}
