@@ -3,6 +3,55 @@
 @import "./layout/layout";
 @import "./utils/utils";
 
+// .loader {
+//     width: 120px;
+//     height: 120px;
+//     border: 16px solid #f3f3f3;
+//     border-radius: 50%;
+//     border-top: 16px solid $primary-color;
+//     animation: spin 1s ease-in-out 3;
+    
+
+//     @keyframes spin {
+//         0% { 
+//             transform: rotate(0deg);
+             
+//         }
+//         100% { 
+//             transform: rotate(360deg);
+//              }
+//       }
+//   }
+  
+//   .loader-container {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     z-index: 10;
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: white;
+//     opacity: 1;
+//     animation: fade-out 1s forwards;
+//     animation-delay: 2s;
+
+//     @keyframes fade-out {
+//         0% {
+//             opacity: 1;
+//         }
+//         99% {
+//             opacity: 0;
+//         }
+//         100% {
+//             opacity: 0;
+//             display: none;
+//         }
+        
+//     }
+//   }
 
 .presentation {
     display: flex;
@@ -18,14 +67,14 @@
 
         p {
             padding: 0 34px 27px;
-            font-weight: 300;
+            font-weight: 200;
             font-size: $font-size-18;
         }
         button {
             @include gradient-btn;
             padding: 16px 19px;
             margin-bottom: 57px;
-            transition: all 0.3s ease-in-out;
+            
         }
         button:hover {
             @include gradient-btn-hover;
@@ -58,7 +107,6 @@
 
 .functioning {
     display: flex;
-    
     flex-direction: column;
     padding: 48px 20px 43px;
 
@@ -70,6 +118,9 @@
 
                 ul {
                     list-style-type: none;
+                    display: flex; 
+                    flex-wrap: wrap;
+                    justify-content: space-evenly;
 
                     li {
                         padding: 28px 48px;
@@ -77,7 +128,15 @@
                         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
                         position: relative;
                         margin-bottom: 25px;
+                        width: 323px;
                         margin-left: 12px;
+
+                        &:hover {
+                            i {
+                                color: $primary-color;
+                                transform: scale(1.2);
+                            }
+                        }
 
                             .functioning__number {
                                 position: absolute;
@@ -92,17 +151,17 @@
                                 border-radius: 50%;
                             }
 
-                            .fa-mobile-screen-button, .fa-list {
+                            i{
                                 color: #7E7E7E;
                                 margin-right: 25px;
+                                transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
                             }
-                            .fa-store {
-                                color: $primary-color;
-                                margin-right: 25px;
-                            }
+
+
                     }
                 }
         }
+
         @media (min-width: 1100px) {
             padding: 50px 0;
             max-width: 1080px;
@@ -112,10 +171,6 @@
                 display: flex;
                 flex-direction: row;
                 justify-content: space-between;
-
-                li {
-                    width: 323px;
-                }
 
                 li:not(:first-child) {
                     margin-left: 0;
@@ -188,26 +243,72 @@
                     font-size: $font-size-18;
                     margin-bottom: 5px;
                 }
-            }  
-            
-            &__heart {
-                input[type="checkbox"] {
-                    display: none;
-                    pointer-events: none;
 
-                    & + label {
-                        cursor: pointer;
-                    }
-
-                    &:checked + label {
-                        .lucide {
-                            fill: $primary-color;
-                        }
-                    }
+                p {
+                    font-weight: 200;
                 }
+            }  
+
+                &__heart {
+                    position: relative;
+
+                    input[type="checkbox"] {
+                        display: none;
+                        pointer-events: none;
+
+                        & + label {
+                            cursor: pointer;
+                            
+
+                            i {
+                                position: absolute;
+                                top: 0;
+                                left: -25px;
+                                width: 24px;
+                                height: 24px;
+                                font-size: 24px;
+                                
+                              }
+                              
+                              .fa-regular.fa-heart {
+                                z-index: 5;
+                                color:black;
+                                transition: opacity 1s ease-in-out;
+                                
+                              }
+                              
+                              .fa-square-full{
+                                z-index: 3;
+                                color: $light-grey;
+                                height:10px;
+                                transition: top 1s;
+                                transition-timing-function: ease-in-out;
+                              }
+                              
+                              .fa-solid.fa-heart {
+                                width: 30px;
+                                height: 30px;
+                                background-clip: text;
+                                -webkit-background-clip: text;
+                                color: transparent;
+                                z-index: 1;
+                                color: $secondary-color;
+                              }
+                        }
+
+
+                        &:checked + label {
+                            .rideau {
+                                top:-25px;
+                              }
+                            .fa-regular.fa-heart {
+                                opacity: 0;
+                              }
+                            }
+                    }
+                  }
             }
-            
-        }
+        
 
         @media (min-width: 1100px) {
             padding: 30px 0 0 0;

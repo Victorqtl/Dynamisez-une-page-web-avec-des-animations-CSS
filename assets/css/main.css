@@ -151,6 +151,24 @@ h2 {
   margin-right: 17px;
 }
 
+.header__restaurants {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 14px 0;
+}
+.header__restaurants i {
+  position: absolute;
+  left: 20px;
+  color: black;
+}
+.header__restaurants .logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -264,6 +282,24 @@ h2 {
   margin-right: 17px;
 }
 
+.header__restaurants {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 14px 0;
+}
+.header__restaurants i {
+  position: absolute;
+  left: 20px;
+  color: black;
+}
+.header__restaurants .logo {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
 .presentation {
   display: flex;
   flex-direction: column;
@@ -277,7 +313,7 @@ h2 {
 }
 .presentation p {
   padding: 0 34px 27px;
-  font-weight: 300;
+  font-weight: 200;
   font-size: 1.125rem;
 }
 .presentation button {
@@ -285,11 +321,11 @@ h2 {
   border-radius: 25px;
   color: white;
   background-image: linear-gradient(to right, #9356DC, #FF79DA);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
   padding: 16px 19px;
   margin-bottom: 57px;
-  transition: all 0.3s ease-in-out;
 }
 .presentation button:hover {
   opacity: 80%;
@@ -327,6 +363,9 @@ h2 {
 }
 .functioning__list ul {
   list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .functioning__list ul li {
   padding: 28px 48px;
@@ -334,7 +373,12 @@ h2 {
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
   position: relative;
   margin-bottom: 25px;
+  width: 323px;
   margin-left: 12px;
+}
+.functioning__list ul li:hover i {
+  color: #9356DC;
+  transform: scale(1.2);
 }
 .functioning__list ul li .functioning__number {
   position: absolute;
@@ -348,13 +392,10 @@ h2 {
   background-color: #9356DC;
   border-radius: 50%;
 }
-.functioning__list ul li .fa-mobile-screen-button, .functioning__list ul li .fa-list {
+.functioning__list ul li i {
   color: #7E7E7E;
   margin-right: 25px;
-}
-.functioning__list ul li .fa-store {
-  color: #9356DC;
-  margin-right: 25px;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 }
 @media (min-width: 1100px) {
   .functioning {
@@ -366,9 +407,6 @@ h2 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-  }
-  .functioning ul li {
-    width: 323px;
   }
   .functioning ul li:not(:first-child) {
     margin-left: 0;
@@ -433,6 +471,12 @@ h2 {
   font-size: 1.125rem;
   margin-bottom: 5px;
 }
+.restaurants .restaurant__txt p {
+  font-weight: 200;
+}
+.restaurants .restaurant__heart {
+  position: relative;
+}
 .restaurants .restaurant__heart input[type=checkbox] {
   display: none;
   pointer-events: none;
@@ -440,8 +484,40 @@ h2 {
 .restaurants .restaurant__heart input[type=checkbox] + label {
   cursor: pointer;
 }
-.restaurants .restaurant__heart input[type=checkbox]:checked + label .lucide {
-  fill: #9356DC;
+.restaurants .restaurant__heart input[type=checkbox] + label i {
+  position: absolute;
+  top: 0;
+  left: -25px;
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+}
+.restaurants .restaurant__heart input[type=checkbox] + label .fa-regular.fa-heart {
+  z-index: 5;
+  color: black;
+  transition: opacity 1s ease-in-out;
+}
+.restaurants .restaurant__heart input[type=checkbox] + label .fa-square-full {
+  z-index: 3;
+  color: #F6F6F6;
+  height: 10px;
+  transition: top 1s;
+  transition-timing-function: ease-in-out;
+}
+.restaurants .restaurant__heart input[type=checkbox] + label .fa-solid.fa-heart {
+  width: 30px;
+  height: 30px;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  z-index: 1;
+  color: #FF79DA;
+}
+.restaurants .restaurant__heart input[type=checkbox]:checked + label .rideau {
+  top: -25px;
+}
+.restaurants .restaurant__heart input[type=checkbox]:checked + label .fa-regular.fa-heart {
+  opacity: 0;
 }
 @media (min-width: 1100px) {
   .restaurants {

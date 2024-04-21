@@ -27,3 +27,23 @@
             }
         }
 }
+
+.header__restaurants {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 14px 0;
+
+    i {
+        position: absolute;
+        left: 20px;
+        color: black;
+    }
+
+    .logo {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+}

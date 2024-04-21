@@ -3,12 +3,263 @@
 @import "./layout/layout";
 @import "./utils/utils";
 
-.header__img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
-    i {
+.hero-section img {
+    width: 100%;
+    height: 275px;
+    object-fit: cover;
+    z-index: -1;
+    position: relative; 
+
+    @media (min-width: 1100px) {
+        height: 383px;
+    }
+}
+
+.container {
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    margin: -50px auto 0;
+    padding-top: 32px;
+    padding-bottom: 40px;
+    background-color: $light-grey;
+
+    &__title {
+        padding: 0 17px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+
+        &-heart {
+            position: relative;
+    
+            input[type="checkbox"] {
+                display: none;
+                pointer-events: none;
+    
+                & + label {
+                    cursor: pointer;
+    
+                    i {
+                        position: absolute;
+                        top: 0;
+                        left: -41px;
+                        width: 24px;
+                        height: 24px;
+                        font-size: 24px;
+                        
+                      }
+                      
+                      .fa-regular.fa-heart {
+                        z-index: 5;
+                        color:black;
+                        transition: opacity 1s ease-in-out;
+                        
+                      }
+                      
+                      .fa-square-full{
+                        z-index: 3;
+                        color: $light-grey;
+                        height:10px;
+                        transition: top 1s;
+                        transition-timing-function: ease-in-out;
+                      }
+                      
+                      .fa-solid.fa-heart {
+                        width: 30px;
+                        height: 30px;
+                        background-clip: text;
+                        -webkit-background-clip: text;
+                        color: transparent;
+                        z-index: 1;
+                        color: $secondary-color;
+                      }
+                }
+    
+    
+                &:checked + label {
+                    .rideau {
+                        top:-25px;
+                      }
+                    .fa-regular.fa-heart {
+                        opacity: 0;
+                      }
+                    }
+            }
+          }
+    }
+
+
+    &__btn {
+        display: flex;
+        justify-content: center;
+
+        button {
+            @include gradient-btn;
+            padding: 16px 49px;
+
+            &:hover {
+                @include gradient-btn-hover;
+            }
+        }
+    }
+
+    @media (min-width: 500px) {
+        max-width: 800px;
+        
+            &__title {
+                position: inherit;
+                justify-content: center;
+                gap: 24px;
+
+                input[type="checkbox"] {
+                & + label {
+                    position:inherit;
+
+                        i {
+                            left: 0;
+                        }
+                }
+            }
+        }
+        
+    }
+
+    @media (min-width: 1100px) {
+        max-width: 1055px;
+    }
+}
+
+.dishes {
+    padding: 0 13px;
+    margin: 40px auto;
+
+    h2 {
+        display: inline-block;
+        margin-bottom: 19px;
+        font-size: $font-size-16;
+        font-weight: 200;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -7px;
+            width: 40px; 
+            border-bottom: 3px solid $light-green;
+        }
+    }
+    
+    &__card {
+        display: flex;
+        justify-content: space-between;
+        padding: 12px 15px;
+        margin-bottom: 12px;
+        background-color: white;
+        border-radius: 15px;
+        position: relative;
+        overflow: hidden;
+        animation: fade-in 0.5s ease-in-out forwards;
+        opacity: 0;
+
+        &:nth-child(2) {
+            animation-delay: 0.5s;
+        }
+        &:nth-child(3) {
+            animation-delay: 1s;
+        }
+        &:nth-child(4) {
+            animation-delay: 1.5s;
+        }
+        &:nth-child(5) {
+            animation-delay: 2s;
+        }
+
+
+        @keyframes fade-in {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        
+        }
+
+        &:hover {
+            .dishes__icon {
+                transform: translateX(0);
+            }
+            .dishes__price {
+                transform: translateX(-60px);
+            }
+            .dishes__txt p {
+                max-width: 210px;
+            }
+        }
+    }
+
+    
+    &__txt {
+        p {
+            overflow: hidden; 
+            text-overflow: ellipsis; 
+            white-space: nowrap;
+        }
+        p:first-child{
+            font-size: $font-size-18;
+            margin-bottom: 5px;
+            
+        }
+        p:last-child {
+            font-size: $font-size-15;
+            font-weight: 200;
+        }
+    }
+    
+    &__price {
+        align-self: flex-end;
+        transition: transform 0.3s ease-in-out;
+    }
+    
+    &__icon {
+        transform: translateX(60px);
+        display: flex;
+        align-items: center;
+        padding: 0 19px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        color: white;
+        background-color: $light-green;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    @media (min-width: 500px) {
+        max-width: 500px;
+    }
+
+    @media (min-width: 1100px) {
+        
+        max-width: 634px;
+
+        &__card {
+            &:hover {
+                .dishes__txt p {
+                    max-width: none;
+                }
+            }
+        }
         
     }
 }
+
+
+
+
