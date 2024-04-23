@@ -42,12 +42,11 @@
     
                     i {
                         position: absolute;
-                        top: 0;
+                        top: -12px;
                         left: -41px;
-                        width: 24px;
-                        height: 24px;
                         font-size: 24px;
-                        
+                        line-height: 20px;
+                        padding: 2px 1px;
                       }
                       
                       .fa-regular.fa-heart {
@@ -60,30 +59,28 @@
                       .fa-square-full{
                         z-index: 3;
                         color: $light-grey;
-                        height:10px;
                         transition: top 1s;
                         transition-timing-function: ease-in-out;
                       }
                       
                       .fa-solid.fa-heart {
-                        width: 30px;
-                        height: 30px;
                         background-clip: text;
                         -webkit-background-clip: text;
                         color: transparent;
                         z-index: 1;
-                        color: $secondary-color;
+                        background-image: linear-gradient( $primary-color, $secondary-color);
                       }
                 }
     
     
                 &:checked + label {
-                    .rideau {
-                        top:-25px;
+                    .fa-square-full {
+                        top:-36px;
                       }
                     .fa-regular.fa-heart {
                         opacity: 0;
                       }
+                      
                     }
             }
           }
