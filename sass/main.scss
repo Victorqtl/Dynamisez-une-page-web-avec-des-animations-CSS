@@ -250,6 +250,7 @@
             }  
 
                 &__heart {
+                    
                     position: relative;
 
                     input[type="checkbox"] {
@@ -258,12 +259,11 @@
 
                         & + label {
                             cursor: pointer;
-                            
 
                             i {
                                 position: absolute;
                                 top: -10px;
-                                right: 0px;
+                                right: 0;
                                 font-size: 24px;
                                 line-height: 20px;
                                 padding: 2px 1px;
@@ -273,7 +273,6 @@
                                 z-index: 5;
                                 color:black;
                                 transition: opacity 1s ease-in-out;
-                                
                               }
                               
                               .fa-square-full{
@@ -295,7 +294,7 @@
 
                         &:checked + label {
                             .fa-square-full {
-                                top: -32px;
+                                top: -33px;
                               }
                             .fa-regular.fa-heart {
                                 opacity: 0;
